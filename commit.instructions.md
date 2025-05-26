@@ -3,15 +3,9 @@
 ## Basic Rules
 
 - Use a commit title limited to 50 characters.
-- Start the title with a valid prefix (e.g., `feat:`, `fix:`, `chore:`, `docs:`).
-- Place a colon and a space immediately after the prefix.
 - Write the commit title in the imperative mood.
 - Wrap the commit description lines at 72 characters.
 - Use the commit description to provide detailed context and motivation.
-
-## Summary
-
-The Conventional Commits specification is a lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history, which makes it easier to write automated tools on top of. This convention dovetails with SemVer, by describing the features, fixes, and breaking changes made in commit messages.
 
 ## Commit Structure
 
@@ -45,12 +39,6 @@ Additional types are not mandated by the Conventional Commits specification, and
 feat: allow provided config object to extend other configs
 
 BREAKING CHANGE: `extends` key in config file is now used for extending other config files
-```
-
-### Commit message with ! to draw attention to breaking change
-
-```
-feat!: send an email to the customer when a product is shipped
 ```
 
 ### Commit message with scope and ! to draw attention to breaking change

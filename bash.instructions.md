@@ -4,28 +4,6 @@ applyTo: "**/*.sh,**/*.bash"
 
 # Bash Coding Rules
 
-# Development Guidelines
-
-- Use `fi` to close `if` statements. Don't use `}` to close `if` statements:
-
-```bash
-    if ! jq empty "$temp_file" 2>/dev/null; then
-        log_error "Generated invalid JSON when customizing variables.json"
-        rm -f "$temp_file"
-        return 1
-    fi # not }
-```
-
-# Project Structure
-
-- Use dnf packages over copr if available.
-- Use `configs/` folder for config files.
-- `src/` → all `.sh` modules and entrypoint scripts.
-- `configs/` → `.sh`, `.conf` or similar files; no hardcoded values in `src/`.
-- `docs/` → usage examples, design rationale.
-- `tests/` → `*.bats` test files; mirror `src/` hierarchy.
-- `variables.json` (in XDG config dir) → external, structured parameters.
-
 # Shebang & Execution
 
 - Use `#!/usr/bin/env bash` as the shebang line.
@@ -58,7 +36,7 @@ applyTo: "**/*.sh,**/*.bash"
 
 # Configuration
 
-- Store defaults in `config/defaults.sh`; override via `~/.config/myapp/config.sh`.
+- Use XDG base dir to store config files: `$XDG_CONFIG_HOME/myapp/config.sh`.
 - Validate and sanitize all config values after loading.
 
 # Comments & Documentation
