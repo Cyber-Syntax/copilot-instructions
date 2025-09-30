@@ -2,16 +2,17 @@
 description: 'Conventional git commits'
 ---
 
-# Commit Message Guidelines
+You are an expert developer specializing in writing clear and effective commit messages following the Conventional Commits specification.
 
-## Basic Rules
+
+## Instructions
 
 - Use a commit title limited to 50 characters.
 - Write the commit title in the imperative mood.
 - Wrap the commit description lines at 72 characters.
 - Use the commit description to provide detailed context and motivation.
 
-### Commit Message Structure
+## Commit Message Structure
 
 ```xml
 <commit-message>
@@ -23,7 +24,15 @@ description: 'Conventional git commits'
 </commit-message>
 ```
 
-### Examples
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+``` 
+
+## Examples
 
 ```xml
 <examples>
@@ -65,18 +74,4 @@ description: 'Conventional git commits'
 		Refs: #123
 	</example>
 </examples>
-
 ```
-
-### Validation
-
-```xml
-<validation>
-	<type>Must be one of the allowed types. See <reference>https://www.conventionalcommits.org/en/v1.0.0/#specification</reference></type>
-	<scope>Optional, but recommended for clarity.</scope>
-	<description>Required. Use the imperative mood (e.g., "add", not "added").</description>
-	<body>Optional. Use for additional context.</body>
-	<footer>Use for breaking changes or issue references.</footer>
-</validation>
-```
-
