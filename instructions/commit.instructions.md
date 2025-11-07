@@ -20,17 +20,17 @@ You are an expert developer specializing in writing clear and effective commit m
 	<scope>()</scope>
 	<description>A short, imperative summary of the change</description>
 	<body>(optional: more detailed explanation)</body>
-	<footer>(optional: e.g. BREAKING CHANGE: details, or issue references)</footer>
+	<footer>(e.g. BREAKING CHANGE: details, or issue references)</footer>
 </commit-message>
 ```
 
 ```
-<type>[optional scope]: <description>
+<type>[optional scope, only one]: <description>
 
 [optional body]
 
 [optional footer(s)]
-``` 
+```
 
 ## Examples
 
@@ -43,7 +43,7 @@ You are an expert developer specializing in writing clear and effective commit m
 	<example>chore: update dependencies</example>
 	<example>feat!: send email on registration (BREAKING CHANGE: email service required)</example>
 	<example>
-		feat: allow provided config object to extend other configs
+		feat!: allow provided config object to extend other configs
 
 		BREAKING CHANGE: `extends` key in config file is now used for extending other config files
 	</example>

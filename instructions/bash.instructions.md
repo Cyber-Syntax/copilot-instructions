@@ -22,7 +22,6 @@ applyTo: "**/*.sh,**/*.bash"
 
 # Code Style
 
-- Keep functions under 50 lines.
 - Follow Single Responsibility Principle: one function, one task.
 - Use guard clauses to reduce nested `if` blocks.
 - Avoid magic numbers—define named constants at top.
