@@ -1,20 +1,29 @@
 ---
-description: 'Prompt and workflow for generating conventional commit messages using a structured XML format. Guides users to create standardized, descriptive commit messages in line with the Conventional Commits specification, including instructions, examples, and validation.'
-tools: ['run_in_terminal', 'get_terminal_output']
+description: 'Prompt and workflow for generating conventional commit messages for staged changes using a structured XML format. Guides users to create standardized, descriptive commit messages in line with the Conventional Commits specification, including instructions, examples, and validation.'
+tools: ['runCommands/runInTerminal', 'runCommands/getTerminalOutput']
 ---
 
 ### Instructions
 
-	This file contains a prompt template for generating conventional commit messages. It provides instructions, examples, and formatting guidelines to help users write standardized, descriptive commit messages in accordance with the Conventional Commits specification.
+```xml
+	<description>This file contains a prompt template for generating conventional commit messages for staged changes. It provides instructions, examples, and formatting guidelines to help users write standardized, descriptive commit messages in accordance with the Conventional Commits specification.</description>
+	<note>
+```
 
 ### Workflow
 
 **Follow these steps:**
 
-1. Run `git status` to review changed files.
-2. Run `git diff` or `git diff --cached` to inspect changes.
-3. Use `git log main..HEAD --stat` to get all commits and description to understand
-4. Construct your commit message using the following XML structure.
+1. Run `git status` to review staged files.
+2. Run `git diff --cached` to inspect staged changes.
+3. Construct your commit message using the following XML structure.
+4. After generating your commit message, Copilot will automatically run the following command in your integrated terminal (no confirmation needed):
+
+```bash
+git commit -m "type(scope): description"
+```
+
+5. Just execute this prompt and Copilot will handle the commit for you in the terminal.
 
 ### Commit Message Structure
 
@@ -22,8 +31,8 @@ tools: ['run_in_terminal', 'get_terminal_output']
 <commit-message>
 	<type>feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert</type>
 	<scope>()</scope>
-	<description>A short, imperative summary of the change</description>
-	<body>(optional: more detailed explanation)</body>
+	<description>A short, imperative summary of the change (max 50 characters)</description>
+	<body>(optional: more detailed explanation, lines max 72 chars)</body>
 	<footer>(optional: e.g. BREAKING CHANGE: details, or issue references)</footer>
 </commit-message>
 ```
@@ -47,8 +56,8 @@ tools: ['run_in_terminal', 'get_terminal_output']
 <validation>
 	<type>Must be one of the allowed types. See <reference>https://www.conventionalcommits.org/en/v1.0.0/#specification</reference></type>
 	<scope>Optional, but recommended for clarity.</scope>
-	<description>Required. Use the imperative mood (e.g., "add", not "added").</description>
-	<body>Optional. Use for additional context.</body>
+	<description>Required. Use the imperative mood (e.g., "add", not "added"). Limit to 50 characters.</description>
+	<body>Optional. Use for additional context. Limit lines to 72 characters.</body>
 	<footer>Use for breaking changes or issue references.</footer>
 </validation>
 ```
@@ -61,3 +70,4 @@ tools: ['run_in_terminal', 'get_terminal_output']
 	<note>Replace with your constructed message. Include body and footer if needed.</note>
 </final-step>
 ```
+

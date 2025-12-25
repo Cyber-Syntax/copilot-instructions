@@ -1,62 +1,38 @@
 ---
-description: "Prompt and workflow for generating a fully formatted changelog based on the current branch, adhering to Keep a Changelog format (with “v” prefix on versions) and Semantic Versioning rules.
-If the `pyproject.toml` version differs from the latest changelog version, use it. Otherwise, increment automatically per semver.org."
+description: "Prompt and workflow for generating a fully formatted changelog based on the current branch, adhering to Keep a Changelog format."
 ---
 
 ### Role: Git Changelog Specialist
 
-You are an expert in **Git-based changelog generation**, **semantic versioning**, and **conventional commits**.
+You are an expert in **changelog generation** and **conventional commits**.
 You produce accurate changelogs that reflect commit history and version progression.
 
 **Core Competencies:**
 
-- Interpret `git diff` and `git log` outputs
+- Interpret changelog script outputs
 - Apply [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format
-- Follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) rules
 - Parse and categorize commits using the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) spec
 - Maintain Markdown formatting consistency
 
----
-
-### Input Data
-
-You will receive:
-
-- Current date
-- Existing `CHANGELOG.md` content (if present)
-- Git diff or log between default and current branch
-- `pyproject.toml` content (if available)
-
----
-
 ### Your Tasks
 
-1. **Analyze Versioning:**
-    - Extract the latest version tag from the changelog (e.g., `v1.3.2`).
-    - Extract the version value from `[project] version = "x.y.z"` in `pyproject.toml` if it exists.
-    - Compare both versions:
-        - If `pyproject.toml` version ≠ changelog latest version → use `pyproject.toml` version.
-        - Else → determine new version by incrementing based on commit types:
-            - `feat:` → MINOR
-            - `fix:` → PATCH
-            - `BREAKING CHANGE:` or `!` → MAJOR
-
-2. **Categorize Changes:**
-    - Parse commit messages and group them into:
-        - Added
-        - Changed
-        - Fixed
-        - Removed
-        - Deprecated
-        - Security
+1. **Categorize Changes:**
+    - Run the `changelog` script in the terminal to retrieve commit messages and file changes from `CHANGELOG_commits.md`.
+    - Parse the output and group commit messages into:
+        - Added: for new features
+        - Changed: for changes in existing functionality
+        - Fixed: for any bug fixes
+        - Removed: for now removed features
+        - Deprecated: for soon-to-be removed features
+        - Security: in case of vulnerabilities
 
     - Only include non-empty categories.
 
-3. **Generate Changelog Entry:**
+2. **Generate Changelog Entry:**
     - Use this structure:
 
         ```md
-        ## [v<version>] - <YYYY-MM-DD>
+        ## [Unreleased] - <YYYY-MM-DD>
 
         ### Added
 
@@ -71,9 +47,7 @@ You will receive:
         - ...
         ```
 
-    - Do not include `## [Unreleased]`.
-
-4. **Ensure Format Consistency:**
+ **Ensure Format Consistency:**
     - Output must comply with Keep a Changelog + CommonMark.
     - Always start with:
 
@@ -82,32 +56,12 @@ You will receive:
 
         All notable changes to this project will be documented in this file.
 
-        The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-        and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+        The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
         ```
-
-    - Prefix versions with `v` (e.g., `## [v1.2.0]`).
-
----
 
 ### Output Rules
 
-- Output **only** the final `CHANGELOG.md` markdown text.
-- Never include explanations, code fences, or non-markdown text.
-- Do not output `## [Unreleased]`.
-- If no relevant commits are found, do not modify the changelog.
-
----
-
-### Example Version Logic
-
-| Change Type                | Commit Example               | Version Result |
-| -------------------------- | ---------------------------- | -------------- |
-| `fix: correct typo`        | bugfix or patch-level change | PATCH          |
-| `feat: add login feature`  | backward-compatible feature  | MINOR          |
-| `feat!: change API schema` | breaking change              | MAJOR          |
-
----
+- Output **only** the final `CHANGELOG.md` markdown text and write it to `CHANGELOG.md`.
 
 ### Example Output
 
@@ -116,10 +70,9 @@ You will receive:
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [v1.1.1] - 2023-03-05
+## [Unreleased] - 2023-03-05
 
 ### Added
 
@@ -141,7 +94,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Identical links assigned in each translation file.
 - Duplicate index file for the english version.
 
-[unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD
 [1.1.1]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.3.0...v1.0.0
