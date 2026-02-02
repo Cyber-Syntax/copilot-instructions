@@ -1,14 +1,10 @@
 ---
 description: 'Prompt and workflow for generating conventional commit messages for staged changes using a structured XML format. Guides users to create standardized, descriptive commit messages in line with the Conventional Commits specification, including instructions, examples, and validation.'
-tools: ['runCommands/runInTerminal', 'runCommands/getTerminalOutput']
 ---
 
 ### Instructions
 
-```xml
-	<description>This file contains a prompt template for generating conventional commit messages for staged changes. It provides instructions, examples, and formatting guidelines to help users write standardized, descriptive commit messages in accordance with the Conventional Commits specification.</description>
-	<note>
-```
+This file contains a prompt template for generating conventional commit messages for staged changes. It provides instructions, examples, and formatting guidelines to help users write standardized, descriptive commit messages in accordance with the Conventional Commits specification.
 
 ### Workflow
 
@@ -16,23 +12,20 @@ tools: ['runCommands/runInTerminal', 'runCommands/getTerminalOutput']
 
 1. Run `git status` to review staged files.
 2. Run `git diff --cached` to inspect staged changes.
-3. Construct your commit message using the following XML structure.
-4. After generating your commit message, Copilot will automatically run the following command in your integrated terminal (no confirmation needed):
 
-```bash
-git commit -m "type(scope): description"
-```
-
-5. Just execute this prompt and Copilot will handle the commit for you in the terminal.
 
 ### Commit Message Structure
+
+- You must use max 50 characters for the description.
+- You must include body if the change is modifying more than one file.
+- You must use imperative mood in the description. Not "moved", but "move".
 
 ```xml
 <commit-message>
 	<type>feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert</type>
 	<scope>()</scope>
-	<description>A short, imperative summary of the change (max 50 characters)</description>
-	<body>(optional: more detailed explanation, lines max 72 chars)</body>
+	<description>A short, imperative summary of the change</description>
+	<body>(more detailed explanation)</body>
 	<footer>(optional: e.g. BREAKING CHANGE: details, or issue references)</footer>
 </commit-message>
 ```
@@ -56,8 +49,8 @@ git commit -m "type(scope): description"
 <validation>
 	<type>Must be one of the allowed types. See <reference>https://www.conventionalcommits.org/en/v1.0.0/#specification</reference></type>
 	<scope>Optional, but recommended for clarity.</scope>
-	<description>Required. Use the imperative mood (e.g., "add", not "added"). Limit to 50 characters.</description>
-	<body>Optional. Use for additional context. Limit lines to 72 characters.</body>
+	<description>Required. Use the imperative mood (e.g., "add", not "added").</description>
+	<body>Optional. Use for additional context.</body>
 	<footer>Use for breaking changes or issue references.</footer>
 </validation>
 ```
