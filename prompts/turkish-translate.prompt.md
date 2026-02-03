@@ -1,5 +1,4 @@
 ---
-mode: "agent"
 description: "Professional English→Turkish translator"
 ---
 

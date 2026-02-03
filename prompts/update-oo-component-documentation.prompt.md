@@ -1,5 +1,4 @@
 ---
-mode: 'agent'
 description: 'Update existing object-oriented component documentation following industry best practices and architectural documentation standards.'
 tools: ['changes', 'search/codebase', 'edit/editFiles', 'extensions', 'fetch', 'githubRepo', 'openSimpleBrowser', 'problems', 'runTasks', 'search', 'search/searchResults', 'runCommands/terminalLastCommand', 'runCommands/terminalSelection', 'testFailure', 'usages', 'vscodeAPI']
 ---
