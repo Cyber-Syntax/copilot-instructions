@@ -1,4 +1,5 @@
 ---
+agent: 'agent'
 description: 'Create GitHub Issue for feature request from specification file using feature_request.yml template.'
 tools: ['search/codebase', 'search', 'github', 'create_issue', 'search_issues', 'update_issue']
 ---

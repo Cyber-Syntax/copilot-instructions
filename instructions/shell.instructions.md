@@ -1,6 +1,6 @@
 ---
-description: "Shell scripting best practices and conventions for bash, sh, zsh, and other shells"
-applyTo: "**/*.sh"
+description: 'Shell scripting best practices and conventions for bash, sh, zsh, and other shells'
+applyTo: '**/*.sh'
 ---
 
 # Shell Scripting Guidelines
@@ -37,7 +37,6 @@ Instructions for writing clean, safe, and maintainable shell scripts for bash, s
 - Use functions for reusable code blocks
 - Create reusable functions instead of repeating similar blocks of code
 - Keep the main execution flow clean and readable
-- Source helper libraries explicitly: `source /path/to/lib.sh` (no implicit assumptions).
 
 ## Working with JSON and YAML
 
@@ -98,13 +97,13 @@ main() {
         echo "Error: failed to create temporary directory" >&2
         exit 1
     fi
-
+    
     echo "============================================================================"
     echo "Script Execution Started"
     echo "============================================================================"
-
+    
     # Main logic here
-
+    
     echo "============================================================================"
     echo "Script Execution Completed"
     echo "============================================================================"
