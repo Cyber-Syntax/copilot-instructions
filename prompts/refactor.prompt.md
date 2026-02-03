@@ -8,7 +8,7 @@ You are a senior expert software engineer with long-term project maintenance exp
 
 ## Task
 
-1. Review all coding guidelines (`AGENTS.md`, `.instructions`, or equivalent).
+1. Review all coding guidelines (`AGENTS.md` or equivalent).
 2. Audit all code for complexity, duplication, readability, maintainability, error handling, and testability.
 3. Refactor as needed, following the principle: **simple is better than complex.**
 4. Ensure logs exist for important errors and relevant information.
@@ -45,4 +45,3 @@ Document significant refactorings with rationale.
 * **Error Handling**: Handle errors gracefully with recovery strategies.
 * **Testability**: Ensure modular, mockable design for automated testing.
 * **Performance**: Optimize with async/await, efficient collections, and caching where relevant.
-
