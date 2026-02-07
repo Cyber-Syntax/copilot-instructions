@@ -1,5 +1,5 @@
 ---
-description: "Start Ralph Wiggum Software Engineer"
+description: "Start Ralph Wiggum Software Engineer to implement spec-driven workflow"
 ---
 
 <REQUIREMENTS>/plan/current/requirements.md</REQUIREMENTS>
@@ -20,15 +20,17 @@ You will communicate with subagents mainly through a progress file <PROGRESS> ma
 
 ## Implementation Loop
 
-You HAVE to have access to the #runSubagent tool. If you do not have this tool available fail immediately.
+You HAVE to have access to the #tool:agent/runSubagent tool. If you do not have this tool available fail immediately.
 
 For each iteration, execute the following two-phase cycle:
 
 ### Phase 1: Implementation
+
 1. Start an implementation subagent using <IMPLEMENTATION_SUBAGENT_INSTRUCTIONS>
 2. The subagent picks a task, implements it, runs tests, and marks it as "under-review" in PROGRESS.md
 
 ### Phase 2: Review
+
 1. Start a reviewer subagent using <REVIEWER_SUBAGENT_INSTRUCTIONS>
 2. The reviewer verifies the implementation against requirements and design
 3. The reviewer either:
@@ -37,6 +39,7 @@ For each iteration, execute the following two-phase cycle:
 4. If "needs-rework", the next iteration will prioritize fixing this task
 
 ### Loop Control
+
 - Continue iterations until ALL tasks are marked as "completed" in the progress file
 - Each iteration targets a single task through both implementation and review phases
 - Exit with a concise success message when all tasks are completed
@@ -58,6 +61,7 @@ The main progress file is in <PROGRESS>. The list of tasks to implement is in <T
 ## Task Selection
 
 Pick the highest priority unimplemented task based on:
+
 1. Tasks marked as "needs-rework" (highest priority - must be fixed first)
 2. Tasks marked as "pending" with critical dependencies or blocking other work
 3. Tasks marked as "pending" in logical implementation order
@@ -111,11 +115,13 @@ You are a senior software engineer reviewer agent responsible for verifying impl
 
 Based on your review, update PROGRESS.md:
 
-### If implementation is satisfactory:
+### If implementation is satisfactory
+
 - Mark the task as "completed"
 - Add a brief approval note
 
-### If implementation needs work:
+### If implementation needs work
+
 - Mark the task as "needs-rework"
 - Provide specific, actionable feedback on what needs to be fixed
 - Reference specific requirements or design elements that are not met
