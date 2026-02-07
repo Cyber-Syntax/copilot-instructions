@@ -43,6 +43,25 @@ This file contains a prompt template for generating conventional commit messages
 </examples>
 ```
 
+```
+fix: prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
+
+Reviewed-by: Z
+Refs: #123
+```
+
+```
+chore!: drop support for Node 6
+
+BREAKING CHANGE: use JavaScript features not available in Node 6.
+```
+
 ### Validation
 
 ```xml
