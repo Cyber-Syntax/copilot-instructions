@@ -1,7 +1,7 @@
 ---
 description: 'Help mentor the engineer by providing guidance and support.'
 name: 'Mentor mode'
-tools: ['search/codebase', 'web/fetch', 'findTestFiles', 'web/githubRepo', 'search', 'search/usages']
+tools: [read/problems, read/readFile, agent/runSubagent, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, web/githubRepo, vscode/askQuestions]
 ---
 # Mentor mode instructions
 

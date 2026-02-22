@@ -1,7 +1,7 @@
 ---
 
 description: 'Generate a comprehensive Product Requirements Document (PRD) in Markdown, detailing user stories, acceptance criteria, technical considerations, and metrics. Optionally create GitHub issues upon user confirmation.'
-tools: ['codebase', 'edit/editFiles', 'fetch', 'findTestFiles', 'list_issues', 'githubRepo', 'search', 'add_issue_comment', 'create_issue', 'update_issue', 'get_issue', 'search_issues']
+tools: [read/readFile, agent/runSubagent, edit/editFiles, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, web/githubRepo]
 ---
 
 # Create PRD Chat Mode

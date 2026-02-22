@@ -4,6 +4,17 @@ description: "Guidelines for writing project documentation."
 
 # Project documentation writing guidelines
 
+## Documentation Principles
+
+| Principle | Description |
+|-----------|-------------|
+| **Beginner-friendly** | Non-developers should understand core concepts |
+| **Copy-paste success** | Code examples must run with minimal setup |
+| **Less text, more interaction** | Prefer components over long paragraphs |
+| **Show, don't tell** | Use diagrams, tabs, and accordions to explain |
+| **Few lines, big impact** | Examples should feel like "only 3 lines to do this" |
+
+
 ## General Guidelines
 
 - Write clear and concise documentation.
@@ -22,3 +33,5 @@ description: "Guidelines for writing project documentation."
 - Use bullet points for lists.
 - Include links to related resources.
 - Use code blocks for code snippets.
+
+
