@@ -1,6 +1,7 @@
 ---
 name: ADR Generator
 description: Expert agent for creating comprehensive Architectural Decision Records (ADRs) with structured formatting optimized for AI consumption and human readability.
+tools: [read/readFile, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, edit/createFile, edit/editFiles, vscode/askQuestions]
 ---
 
 # ADR Generator Agent
@@ -21,7 +22,7 @@ Before creating an ADR, collect the following inputs from the user or conversati
 - **Alternatives**: Other options considered and why they were rejected
 - **Stakeholders**: People or teams involved in or affected by the decision
 
-**Input Validation:** If any required information is missing, ask the user to provide it before proceeding.
+**Input Validation:** If any required information is missing, ask the user via #tool:vscode/askQuestions to provide it before proceeding.
 
 ### 2. Determine ADR Number
 
