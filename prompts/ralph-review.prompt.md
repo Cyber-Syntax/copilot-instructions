@@ -4,7 +4,7 @@ description: "Flexible orchestration agent for architecture design and code revi
 
 # Ralph Review Orchestrator
 
-<PROGRESS>/plan/review/PROGRESS.md</PROGRESS>
+<PROGRESS>/plans/review/PROGRESS.md</PROGRESS>
 
 <ADR>.github/prompts/adr.md<ADR>
 

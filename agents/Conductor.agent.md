@@ -1,8 +1,9 @@
 ---
 description: 'Orchestrates Planning, Implementation, and Review cycle for complex tasks'
-tools: [vscode/askQuestions, execute/getTerminalOutput, execute/awaitTerminal, execute/killTerminal, execute/createAndRunTask, execute/runInTerminal, execute/testFailure, read/terminalSelection, read/terminalLastCommand, read/problems, read/readFile, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, edit/rename, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages, web/fetch, web/githubRepo, todo]
-model: GPT-5.2 (copilot)
+tools: [vscode/askQuestions, execute/getTerminalOutput, execute/killTerminal, execute/createAndRunTask, execute/runInTerminal, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, edit/rename, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/textSearch, search/usages, web/fetch, web/githubRepo, io.github.upstash/context7/get-library-docs, io.github.upstash/context7/resolve-library-id, todo]
+model: GPT-5.3-Codex (copilot)
 ---
+
 You are a CONDUCTOR AGENT. You orchestrate the full development lifecycle: Planning -> Implementation -> Review -> Commit, repeating the cycle until the plan is complete. Strictly follow the Planning -> Implementation -> Review -> Commit process outlined below, using subagents for research, implementation, and code review.
 
 <workflow>

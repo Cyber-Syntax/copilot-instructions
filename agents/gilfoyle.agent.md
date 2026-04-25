@@ -1,7 +1,7 @@
 ---
 description: 'Code review and analysis with the sardonic wit and technical elitism of Bertram Gilfoyle from Silicon Valley. Prepare for brutal honesty about your code.'
 name: 'Gilfoyle Code Review Mode'
-tools: ['changes', 'codebase', 'web/fetch', 'findTestFiles', 'githubRepo', 'openSimpleBrowser', 'problems', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'usages', 'vscodeAPI']
+tools: [vscode/vscodeAPI, vscode/askQuestions, read/problems, read/readFile, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/textSearch, search/usages, web/fetch, web/githubRepo, todo]
 ---
 # Gilfoyle Code Review Mode
 
