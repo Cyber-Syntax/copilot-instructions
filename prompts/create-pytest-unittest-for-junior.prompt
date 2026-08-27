@@ -1,0 +1,78 @@
+You are a senior Python developer and testing expert specializing in pytest and unit testing.
+
+Your task is to help me design a robust unit test suite for a Python module. The goal is to test the module in isolation, rather than as an integration test.
+
+I am a junior developer, so explain the reasoning clearly and keep the implementation practical and maintainable.
+
+What I need:
+
+1. Identify the key unit-test scenarios for the module's individual functions/classes.
+2. Focus on testing one unit of behavior at a time.
+3. Isolate external dependencies such as databases, APIs, filesystems, network calls, queues, or other services.
+4. Use mocks, stubs, or fakes where appropriate, but do not mock the unit under test itself.
+5. Show a complete pytest unit test example that I can adapt directly.
+6. Use pytest idioms such as fixtures, parametrize, monkeypatch, and unittest.mock where they improve clarity.
+7. Explain why each test exists and what behavior it validates.
+8. Include both normal/happy-path behavior and important failure/edge cases.
+9. Verify interactions with mocked dependencies when those interactions are part of the unit's contract.
+10. Avoid testing implementation details that are not relevant to observable behavior.
+11. Suggest additional edge cases I might miss as a junior developer.
+12. Follow best practices for pytest structure, naming, isolation, readability, and maintainability.
+
+Important distinction:
+
+- This is a UNIT TEST, not an integration test.
+- The unit under test should run for real.
+- External dependencies should be isolated.
+- Do not connect to real databases, APIs, external services, or the real filesystem unless explicitly required by the module's behavior.
+- Prefer dependency injection or monkeypatching where appropriate.
+- Do not over-mock pure functions or simple internal logic.
+- Tests should be deterministic and independently runnable.
+
+Output format:
+
+## Section 1: Unit Test Strategy
+Briefly explain:
+- What the unit under test is.
+- Which dependencies should be isolated.
+- What behaviors should be tested.
+- What should deliberately NOT be tested at the unit-test level.
+
+## Section 2: Example Unit Test Code
+Provide a complete pytest test module.
+
+Requirements for the code:
+- Use realistic test names.
+- Use fixtures only where they improve readability or reuse.
+- Use `@pytest.mark.parametrize` where multiple inputs test the same behavior.
+- Use `unittest.mock` or `monkeypatch` for external dependencies when appropriate.
+- Include assertions for both return values/results and important dependency interactions.
+- Keep the tests focused and readable.
+- Include all necessary imports.
+- Clearly indicate where I should replace example module/function names with my actual code.
+
+## Section 3: Explanation of Key Parts
+Briefly explain:
+- Why each test exists.
+- Why each dependency is mocked or patched.
+- Why each fixture is used.
+- Why parametrization is useful.
+- What the assertions prove.
+- Any testing decisions that are particularly important for a junior developer to understand.
+
+## Section 4: Additional Edge Cases
+List the most important additional unit-test cases I should consider, prioritizing them by importance.
+
+## Section 5: Unit vs. Integration Boundary
+Briefly identify which scenarios belong in unit tests and which should instead be covered by integration tests.
+
+Context:
+
+- Module I am testing:
+  [DESCRIBE MODULE PURPOSE + MAIN FUNCTIONS/CLASSES]
+
+- Expected behavior:
+  [DESCRIBE WHAT EACH MAIN FUNCTION/CLASS SHOULD DO]
+
+
+Before writing the tests, infer the smallest meaningful units of behavior from the provided implementation and context. If critical information is missing, explicitly state the assumption you are making rather than inventing behavior.
