@@ -7,7 +7,7 @@
 > repository but I have changed some of them to fit my needs.
 
 ## My Prompts
->
+
 > [!NOTE]
 > My custom prompts created by me for various tasks.
 
@@ -35,7 +35,6 @@
 
 ## Other repos
 
->
 > [!NOTE]
 >
 > Source: <https://github.com/ShepAlderson/copilot-orchestra/tree/main>
@@ -43,3 +42,7 @@
 > I refactored this to use with askQuestions tool provided with vscode
 
 - Conductor.agent.md
+
+Source: <https://github.com/ai-boost/awesome-prompts>:
+
+- test_strategy_arch.prompt.md
